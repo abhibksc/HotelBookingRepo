@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "1.0.0",
   "description": "grocert user interface",
-  "main": "index.js",
+ 
   "scripts": {
     "start": "parcel serve public/index.html --public-url /",
     "build": "parcel build public/index.html --public-url /",
