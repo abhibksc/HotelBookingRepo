@@ -1,0 +1,7 @@
+[
+  {
+    "origin": ["http://localhost:1234"],  // Replace with the URL of your frontend
+    "method": ["GET", "POST", "PUT", "DELETE"],
+    "maxAgeSeconds": 3600
+  }
+]

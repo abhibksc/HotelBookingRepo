@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    />
+    <title>Hotel</title>
+    <link rel="stylesheet" href="/src/index.css" />
+    <link
+      rel="shortcut icon"
+      href="../public/favicon.ico"
+      type="image/x-icon"
+    />
+    <style>
+      html,
+      body {
+        zoom: 100%;
+        overflow-x: hidden;
+        font-size: 13px;
+        transform: none !important;
+      }
+
+      body.modal-open {
+        overflow: hidden;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      /* Hide scrollbar for Chrome, Safari, and Opera */
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge, and Firefox */
+      body {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      /* Hide scrollbar for specific elements */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+
+      .scrollbar-hide {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, and Opera */
+      }
+
+      .hide-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="login"></div>
+    <div id="signup"></div>
+    <div id="modal-root"></div>
+
+    <!-- <div id="roots"></div> -->
+
+    <script type="module" src="/src/index.js"></script>
+  </body>
+</html>
