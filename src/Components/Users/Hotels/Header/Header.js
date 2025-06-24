@@ -67,7 +67,14 @@ const Header = ({ page }) => {
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
-          className="fixed top-0 z-50 w-full h-14 text-white  border-white/30 backdrop-blur-sm transition-all duration-300"
+          className=
+          {`
+               ${page === "MainPage" ? "text-white bg-white/30" : "text-gray-800 bg-white/50 "}
+            
+            fixed top-0 z-50 w-full h-14   border-white/30 backdrop-blur-sm transition-all duration-300
+            
+            
+            `}
         >
           <div className="container mx-auto px-4 xl:px-12 h-full flex items-center justify-between">
             <div
