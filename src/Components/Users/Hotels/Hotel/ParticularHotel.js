@@ -1,9 +1,20 @@
+import LoadingModal from "../../../LoadingModal";
+import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import BookingModal from "./BookingModal"; // import modal
 import { useEffect, useState } from "react";
 import { IsOpenAuthModal } from "../../../../ReduxStore/Slices/auth";
 import { useParams } from "react-router-dom";
 import { getUsersParticular_Hotels } from "../../../../CRUD Operations/Get";
+import { FaArrowLeft } from "react-icons/fa6";
+
+
+
+
+
+
+
+
 
 const ParticularHotel = () => {
   const dispatch = useDispatch();
@@ -16,7 +27,7 @@ const ParticularHotel = () => {
     const fetchHotel = async () => {
       const response = await getUsersParticular_Hotels(id);
       if (response.success) {
-        setHotel({ ...response.hotels, id }); // include ID for bookings
+        setHotel({ ...response.hotels, id });
       } else {
         toast.error("Error fetching hotel details");
       }
@@ -35,28 +46,42 @@ const ParticularHotel = () => {
   if (!hotel) return <LoadingModal />;
 
   return (
-    <div className="min-h-screen pt-24 px-4 pb-12 max-w-5xl mx-auto">
-      <div className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+    <div
+      style={{
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/bg4.jpg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+      className="min-h-screen pt-24 mb-14 px-4   max-w-screen  mx-auto text-white relative top-[50px]"
+    >
+      <button
+        onClick={() => window.history.back()}
+        className="flex items-center gap-2 text-white hover:text-blue-300 mb-6 transition"
+      >
+        <FaArrowLeft />
+        <span>Back</span>
+      </button>
+
+      <div className="bg-white/20  w-3/6 mx-auto backdrop-blur-lg rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-white/30">
         <img
           src={hotel.images}
           alt={hotel.hotelName}
-          className="w-full md:w-1/2 h-64 md:h-auto object-cover"
+          className="w-64 md:w-64 h-64 md:h-auto object-cover"
         />
-        <div className="p-6 flex flex-col justify-between gap-4 w-full">
+        <div className="p-6 flex flex-col justify-between gap-4 w-full text-white">
           <div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">
-              {hotel.hotelName}
-            </h2>
-            <p className="text-lg text-gray-700 mb-2">
+            <h2 className="text-3xl font-bold mb-2 drop-shadow">{hotel.hotelName}</h2>
+            <p className="text-lg mb-2">
               <strong>Price:</strong> ₹{hotel.pricePerNight}
             </p>
-                     <p className="text-lg text-gray-700 mb-2">
-              <strong>Avaiablity:</strong> {hotel.Status == 1 ? "YES" : "NO"}
+            <p className="text-lg mb-2">
+              <strong>Availability:</strong> {hotel.Status === 1 ? "YES" : "NO"}
             </p>
-            <p className="text-gray-600 mb-2">
+            <p className="mb-2">
               <strong>Location:</strong> {hotel.address}, {hotel.city}, {hotel.pinCode}
             </p>
-            <p className="text-gray-600">{hotel.description}</p>
+            <p className="text-white/80 italic">{hotel.description}</p>
           </div>
           <button
             className="mt-4 w-full bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 text-white py-2 px-4 rounded-lg hover:scale-105 transition"

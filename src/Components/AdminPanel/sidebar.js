@@ -45,6 +45,11 @@ const Sidebar = ({ onLinkClick }) => {
       label: "Hotel Management",
       icon: <FaBox />,
     },
+        {
+      to: `/admin/${AdminToken}/pincodeManagement`,
+      label: "Pincode Management",
+      icon: <FaBox />,
+    },
     { to: `/admin/${AdminToken}/bookingManagement`, label: "Booking Management", icon: <FaBox /> },
   ];
 

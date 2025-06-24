@@ -11,7 +11,7 @@ import { IoMdLogOut } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { IsOpenAuthModal, LogoutAll } from "../../../../ReduxStore/Slices/auth";
 
-const NavLogin = () => {
+const NavLogin = ({page}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -28,7 +28,22 @@ const NavLogin = () => {
   };
 
   return (
-    <li className="relative group text-sm font-medium text-gray-700 hidden xl:block">
+    <li className={`
+    
+      ${page === "MainPage" ? 
+          "text-white"
+
+
+          :
+
+              "text-gray-800"
+
+
+
+
+        }
+    
+    relative group text-sm font-medium  hidden xl:block`}>
       {/* Button */}
       <div
         className="flex items-center gap-1 cursor-pointer  p-5   hover:text-blue-600"
@@ -55,18 +70,18 @@ const NavLogin = () => {
 
           {isLoggedIn && (
             <>
-              <li
+              {/* <li
                 className="flex items-center gap-2 hover:text-blue-600 transition"
                 // onClick={() => navigate(`/mytrip-user/profile/${userToken}`)}
                 onClick={() => navigate(`/`)}
               >
                 <FaRegUserCircle />
                 <span>My Profile</span>
-              </li>
+              </li> */}
               <li
                 className="flex items-center gap-2 hover:text-blue-600 transition"
                 // onClick={() => navigate(`/mytrip-user/bookings/${userToken}`)}
-                onClick={() => navigate(`/`)}
+                onClick={() => navigate(`/bookings/Cart/${userToken}`)}
               >
                 <MdOutlineBorderStyle />
                 <span>Bookings</span>

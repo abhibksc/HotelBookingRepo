@@ -7,6 +7,7 @@ import UserManagement from "./Pages/UserManagement";
 import HotelManagement from "./Pages/HomeManagement/Hotels/HotelManagement";
 import MainCategory from "./Pages/HomeManagement/Categories/MainCategory";
 import Bookings from "./Pages/BookingManagement/Bookings";
+import ManagePincode from "./Pages/PincodeManagement/ManagePincode";
 const AdminPanel = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -47,6 +48,7 @@ const AdminPanel = () => {
           <Route path="HotelManagement" element={<HotelManagement />} />
           <Route path="CategoryManagement" element={<MainCategory />} />
           <Route path="bookingManagement" element={<Bookings />} />
+                    <Route path="pincodeManagement" element={<ManagePincode />} />
 
 
         </Routes>
