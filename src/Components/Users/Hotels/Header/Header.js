@@ -89,8 +89,8 @@ const Header = ({ page }) => {
             </div>
 
             <ul className="flex items-center space-x-6">
-              <NavLogin />
-              <NavCart />
+              <NavLogin page = {page} showSticky={showSticky}/>
+              <NavCart page = {page} showSticky={showSticky}/>
             </ul>
           </div>
         </header>

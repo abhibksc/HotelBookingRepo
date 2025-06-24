@@ -11,7 +11,7 @@ import { IoMdLogOut } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { IsOpenAuthModal, LogoutAll } from "../../../../ReduxStore/Slices/auth";
 
-const NavLogin = ({page}) => {
+const NavLogin = ({page , showSticky}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -30,7 +30,7 @@ const NavLogin = ({page}) => {
   return (
     <li className={`
     
-      ${page === "MainPage" ? 
+      ${showSticky  ? 
           "text-white"
 
 
@@ -79,7 +79,8 @@ const NavLogin = ({page}) => {
                 <span>My Profile</span>
               </li> */}
               <li
-                className="flex items-center gap-2 hover:text-blue-600 transition"
+                className={`flex items-center gap-2  transition text-white
+                  `}
                 // onClick={() => navigate(`/mytrip-user/bookings/${userToken}`)}
                 onClick={() => navigate(`/bookings/Cart/${userToken}`)}
               >

@@ -67,8 +67,8 @@ const handleSubmit = async () => {
 
 
   return (
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-40 flex items-center justify-center">
-      <div className="bg-black p-6 rounded-xl w-full max-w-md space-y-4 shadow-lg">
+    <div className="fixed text-black inset-0 z-50 bg-black bg-opacity-40 flex items-center justify-center">
+      <div className="bg-white p-6 rounded-xl w-full max-w-md space-y-4 shadow-lg">
         <h2 className="text-xl font-bold text-center">Book Your Stay</h2>
 
         <div className="space-y-2">

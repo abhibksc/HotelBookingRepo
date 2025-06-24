@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IsOpenAuthModal } from "../../../../ReduxStore/Slices/auth";
 
-const NavCart = () => {
+const NavCart = ({page , showSticky}) => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -24,7 +24,18 @@ const NavCart = () => {
 
   return (
      <li
-                className="flex text-[12px] gap-1 items-center cursor-pointer relative py-1"
+                className={`
+                  
+                  ${
+
+                    showSticky ? 
+
+                    "text-white"
+                    :
+
+                    "text-black"
+                  }
+                  flex text-[12px] gap-1 items-center cursor-pointer relative py-1`}
                 onClick={() => userToken ? navigate(`/bookings/Cart/${userToken}`) : dispatch(IsOpenAuthModal(true))}
               >
                 <MdOutlineShoppingCart className="w-6 h-6 mt-1" />
